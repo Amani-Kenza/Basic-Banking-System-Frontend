@@ -37,14 +37,16 @@ export default function Customers() {
   const [customers, setCustomers] = useState([]);
 
   const fetchCustomers = async () => {
-      try {
-          const response = await axios.get('https://banking-system-backend-livid.vercel.app/api/customers');
-          setCustomers(response.data); 
-      } catch (error) {
-          console.error('Error fetching customers:', error);
-          return [];
-      }
-  };
+    try {
+        const response = await axios.get('https://banking-system-backend-livid.vercel.app/api/customers');
+        // Ajoutez une propriété 'id' unique basée sur 'AccountNum' pour chaque client
+        const customersWithIds = response.data.map((customer, index) => ({ ...customer, id: customer.id }));
+        setCustomers(customersWithIds);
+    } catch (error) {
+        console.error('Error fetching customers:', error);
+        return [];
+    }
+};
 
   useEffect(() => {
     
