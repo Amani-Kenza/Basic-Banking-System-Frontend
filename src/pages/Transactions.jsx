@@ -28,7 +28,7 @@ export default function Transactions() {
         setToAccount('');
 
         try {
-            const response = await axios.post('/api/updateCustomerBalance', {
+            const response = await axios.post('https://y-lime-five.vercel.app/api/updateCustomerBalance', {
                 customerBalance: {
                     fromAccount:parseInt(fromAccount,10),
                     toAccount:parseInt(toAccount,10),
