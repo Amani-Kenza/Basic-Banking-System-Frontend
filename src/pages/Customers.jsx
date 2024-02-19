@@ -72,6 +72,7 @@ export default function Customers() {
               <DataGrid
                   rows={customers}
                   columns={columns}
+                  getRowId={(row) => row.id} 
               />
           </div>
           <Footer />
