@@ -38,7 +38,7 @@ export default function Customers() {
 
   const fetchCustomers = async () => {
       try {
-          const response = await axios.get('https://y-lime-five.vercel.app/api/customers');
+          const response = await axios.get('https://banking-system-backend-livid.vercel.app/api/customers');
           setCustomers(response.data); 
       } catch (error) {
           console.error('Error fetching customers:', error);
